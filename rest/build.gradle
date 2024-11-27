@@ -1,3 +1,0 @@
-dependencies {
-    implementation project(':calculator-logic') // Ensure the rest module is included
-}
