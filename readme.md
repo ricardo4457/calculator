@@ -1,8 +1,7 @@
-
 # Calculator REST API
 
 ## Overview
-This project is a simple REST API that performs basic arithmetic operations (addition, subtraction, multiplication, and division) with support for arbitrary precision signed decimal numbers. The project is divided into two modules: `calculator` and `rest`.
+This project is a simple REST API that performs basic arithmetic operations (addition, subtraction, multiplication, and division) with support for arbitrary precision signed decimal numbers. The project is divided into two modules: `calculator-logic` and `rest`.
 
 ## Functional Requirements
 - REST API that exposes the sum, subtraction, multiplication, and division operations.
@@ -10,7 +9,7 @@ This project is a simple REST API that performs basic arithmetic operations (add
 - Support for arbitrary precision signed decimal numbers.
 
 ## Non-Functional Requirements
-- Project uses Gradle with at least 2 modules: `rest` and `calculator`.
+- Project uses Gradle with at least 2 modules: `rest` and `calculator-logic`.
 - Uses Spring Boot 3.4.0 as the foundation for both modules.
 - Uses RabbitMQ and Spring AMQP for inter-module communication.
 - Configuration via `application.properties` (default of Spring Boot).
@@ -19,17 +18,17 @@ This project is a simple REST API that performs basic arithmetic operations (add
 
 ## Project Structure
 ```
-project-root
+calculator
 │
-├── calculator
-│   ├── src/main/java/com/example/calculator
-│   │   └── CalculatorService.java
+├── calculator-logic
+│   ├── src/main/java/calculator-logic
+│   │   └── CalculatorLogicService.java
 │   ├── src/main/resources
 │   │   └── application.properties
 │   └── build.gradle
 │
 ├── rest
-│   ├── src/main/java/com/example/rest
+│   ├── src/main/java/rest
 │   │   └── CalculatorController.java
 │   ├── src/main/resources
 │   │   └── application.properties
@@ -66,9 +65,9 @@ project-root
     ```
 
 4. **Run the modules:**
-    - Start the `calculator` module:
+    - Start the `calculator-logic` module:
         ```sh
-        cd calculator
+        cd calculator-logic
         ./gradlew bootRun
         ```
     - In a new terminal window, start the `rest` module:
